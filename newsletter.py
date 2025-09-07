@@ -108,7 +108,7 @@ def send_email(html_body):
 def main():
     token = get_token()
     with open("routes.json", encoding="utf-8-sig") as f:
-    watches = json.load(f)
+        watches = json.load(f)
     sections = [(w["title"], build_section(token, w)) for w in watches]
     html = build_html(sections)
     send_email(html)
